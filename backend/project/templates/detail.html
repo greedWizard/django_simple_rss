@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'home' %}">На главную</a>
+<div class="item">
+    {{ item.title }} <br>
+    <span>URL: <a href="{{ item.url }}">{{ item.url }}</a></span> <br>
+    {{ item.timestamp }} | {{ item.feed.name }} <br>
+    <img src="{{ item.thumbnail }}" alt="">
+</div>
+{% endblock content %}

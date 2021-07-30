@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Обновите страницу для получения новых новостей</h2>
+    {% for item in news %}
+        <div class="item">
+            {{ item.title|truncatechars:50 }} <br>
+            <a href="{% url 'feed-item-detail' item.id %}"> Перейти </a> <br>
+            {{ item.timestamp }} | {{ item.feed.name }} <br>
+            <img src="{{ item.thumbnail }}" alt="">
+            <hr>
+        </div>
+    {% endfor %}
+{% endblock content %}
